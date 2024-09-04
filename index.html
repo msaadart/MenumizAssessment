@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="logo-wrapper">
+        <div class="logo-box">
+          <img src="/assets/img/Logo.png" />
+          <p><strong>HRHR</strong></p>
+        </div>
+        <div>
+          <img src="/assets/img/DrawerToggleIcon.svg" />
+        </div>
+      </div>
+      <div class="top-bar-content">
+        <div class="title-component">
+          <img src="/assets/img/Union.png" />
+          <p>Menumiz HR</p>
+        </div>
+        <div class="actions-component">
+          <div class="search-bar-component">
+            <img src="/assets/img/SearchNormal.svg" />
+            <input type="search" placeholder="Enter any keyword" />
+          </div>
+          <div class="filter-icon-component">
+            <img src="/assets/img/FilterIcon.png" />
+          </div>
+          <div class="notification-icon-component" id="notificationButton">
+            <span class="unread-notification-indication-light"></span>
+            <img src="/assets/img/NotificationIcon.svg" />
+          </div>
+          <div class="account-action-component">
+            <img src="/assets/img/User1Avatar.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+      <nav class="nav-bar">
+        <ul class="nav-list">
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/DashboardIcon-Active.svg" />
+            <label>Dashboard</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/CalendarIcon-Yellow.svg" />
+            <label>Calendar</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/RecruitmentIcon.svg" />
+            <label>Recruitment</label>
+            <span class="notify-value">10</span>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/EmployeesIcon.svg" />
+            <label>Employees</label>
+          </li>
+          <li class="normal-list-item leave-item">
+            <img src="/assets/img/nav-icons/LeaveIcon.svg" />
+            <label>Leave</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/OrganizationIcon.svg" />
+            <label>Organization</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/BillingsIcon.svg" />
+            <label>Billings</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/EngagementIcon.svg" />
+            <label>Engagement</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/DevelopmentIcon.svg" />
+            <label>Development</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/PerformanceIcon.svg" />
+            <label>Performance</label>
+          </li>
+          <li class="normal-list-item">
+            <img src="/assets/img/nav-icons/ReportsIcon.svg" />
+            <label>Reports</label>
+          </li>
+        </ul>
+      </nav>
+      <main class="main-content">
+        <div class="tabs-row">
+          <ul class="tabs-list">
+            <li class="tabs-list-item active unread">
+              <label> Leave Management</label>
+            </li>
+            <li class="tabs-list-item">
+              <label> Leave Requests</label>
+            </li>
+            <li class="tabs-list-item">
+              <label> Leave Types</label>
+            </li>
+            <li class="tabs-list-item unread">
+              <label> Leave Calendar</label>
+            </li>
+            <li class="tabs-list-item">
+              <label> Leave Report</label>
+            </li>
+            <li class="tabs-list-item">
+              <label> Leave Approver</label>
+            </li>
+            <li class="tabs-list-item">
+              <img src="/assets/img/FilterIcon.png" />
+            </li>
+          </ul>
+        </div>
+        <div class="dashboard-component">
+          <h1 class="component-title">Dashboard</h1>
+          <div class="component-row">
+            <div class="heatmap-component">
+              <div class="header-row">
+                <p class="component-title">Heatmap</p>
+                <div class="drodowns-component">
+                  <select>
+                    <option>SICKDAY</option>
+                    <option>BIRTHDAY</option>
+                    <option>FAMILYFUNCTION</option>
+                    <option>MATERNITY</option>
+                  </select>
+                  <select>
+                    <option>MARCH 2023</option>
+                    <option>APRIL 2023</option>
+                    <option>MAY 2023</option>
+                    <option>JUNE 2023</option>
+                  </select>
+                </div>
+              </div>
+              <div class="week-days-row">
+                <ul class="days-list" id="daysList">
+                  <li class="day-list-item">Mon</li>
+                  <li class="day-list-item">Tue</li>
+                  <li class="day-list-item">Wed</li>
+                  <li class="day-list-item">Thu</li>
+                  <li class="day-list-item active-day">Fri</li>
+                  <li class="day-list-item">Sat</li>
+                  <li class="day-list-item">Sun</li>
+                </ul>
+              </div>
+              <div class="data-row">
+                <div class="data-indicator-wrapper">
+                  <p class="indicator-name">Sick Leave</p>
+                  <div
+                    class="circular-progress"
+                    data-inner-circle-color="#1E1E1E"
+                    data-percentage="50"
+                    data-progress-color="#6E56E0"
+                    data-bg-color="#272727"
+                  >
+                    <div class="inner-circle"></div>
+                    <p class="percentage">0%</p>
+                  </div>
+                </div>
+                <div class="data-indicator-wrapper">
+                  <p class="indicator-name">Annual Leave</p>
+                  <div
+                    class="circular-progress"
+                    data-inner-circle-color="#1E1E1E"
+                    data-percentage="30"
+                    data-progress-color="#6E56E0"
+                    data-bg-color="#272727"
+                  >
+                    <div class="inner-circle"></div>
+                    <p class="percentage">0%</p>
+                  </div>
+                </div>
+                <div class="data-indicator-wrapper">
+                  <p class="indicator-name">Emergency Leave</p>
+                  <div
+                    class="circular-progress"
+                    data-inner-circle-color="#1E1E1E"
+                    data-percentage="20"
+                    data-progress-color="#6E56E0"
+                    data-bg-color="#272727"
+                  >
+                    <div class="inner-circle"></div>
+                    <p class="percentage">0%</p>
+                  </div>
+                </div>
+              </div>
+              <div class="component-footer">
+                <p>Most popular day: Friday</p>
+              </div>
+            </div>
+            <div class="most-day-away-component">
+              <div class="header-row">
+                <p class="component-title">Most Days Away</p>
+                <div class="drodowns-component">
+                  <select>
+                    <option>MARCH 2023</option>
+                    <option>APRIL 2023</option>
+                    <option>MAY 2023</option>
+                    <option>JUNE 2023</option>
+                  </select>
+                </div>
+              </div>
+              <div class="data-component">
+                <ul class="most-day-away-list">
+                  <li class="most-day-away-list-item">
+                    <div class="user-name-pic">
+                      <img src="/assets/img/User2Avatar.png" />
+                      <p class="user-name">Mark Jacobs</p>
+                    </div>
+                    <p class="away-days-info">5.0 day(s)</p>
+                  </li>
+                  <li class="most-day-away-list-item">
+                    <div class="user-name-pic">
+                      <img src="/assets/img/User1Avatar.svg" />
+                      <p class="user-name">Charlie Kristen</p>
+                    </div>
+                    <p class="away-days-info">3.5 day(s)</p>
+                  </li>
+                  <li class="most-day-away-list-item">
+                    <div class="user-name-pic">
+                      <img src="/assets/img/User3Avatar.png" />
+                      <p class="user-name">Nur Fariha binti Maslan</p>
+                    </div>
+                    <p class="away-days-info">1.0 day(s)</p>
+                  </li>
+                  <li class="most-day-away-list-item">
+                    <div class="user-name-pic">
+                      <img src="/assets/img/User1Avatar.svg" />
+                      <p class="user-name">Nishant Talwar</p>
+                    </div>
+                    <p class="away-days-info">1.0 day(s)</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="component-footer">
+                <p>Total: 95 day(s)</p>
+              </div>
+            </div>
+            <div class="avatar-component">
+              <img src="/assets/img/User2Avatar.png" />
+            </div>
+          </div>
+        </div>
+        <div class="leave-requests-component">
+          <div class="component-title-row">
+            <h1 class="component-title">Leave Requests</h1>
+            <div class="request-view-type-buttons-component">
+              <button id="listViewBtn" class="list-view active">
+                List View
+              </button>
+              <button id="monthViewBtn" class="month-view">Month-view</button>
+            </div>
+          </div>
+          <div class="component-row">
+            <div class="heatmap-component">
+              <div class="data-row">
+                <table id="leaveRequestsTable" class="leave-requests-table">
+                  <thead class="table-head">
+                    <tr class="table-head-row">
+                      <td class="table-col check-col">
+                        <input type="checkbox" />#
+                        <span class="sort-icon">
+                          <img src="/assets/img/SortIcon.svg" />
+                        </span>
+                      </td>
+                      <td class="table-col name-col">
+                        NAME
+                        <span class="sort-icon">
+                          <img src="/assets/img/SortIcon.svg" />
+                        </span>
+                      </td>
+                      <td class="table-col period-col">
+                        Period
+                        <span class="sort-icon">
+                          <img src="/assets/img/SortIcon.svg" />
+                        </span>
+                      </td>
+                      <td class="table-col days-col">
+                        DAY(S)
+                        <span class="sort-icon">
+                          <img src="/assets/img/SortIcon.svg" />
+                        </span>
+                      </td>
+                      <td class="table-col leave-col">
+                        LEAVE TYPE
+                        <span class="sort-icon">
+                          <img src="/assets/img/SortIcon.svg" />
+                        </span>
+                      </td>
+                      <td class="table-col actions-col">ACTIONS</td>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tbody id="leaveRequestTableBody"></tbody>
+                </table>
+              </div>
+              <div class="component-footer">
+                <p>Most popular day: Friday</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="display: none"
+          id="notificationsComponent"
+          class="notifications-component"
+        >
+          <div class="notify-header">
+            <h2>Notifications</h2>
+            <div class="mark-all-box">
+              <label>Mark all as read</label>
+              <img src="/assets/img/CheckMark.svg" />
+            </div>
+          </div>
+          <ul class="notifications-list">
+            <li class="notifications-list-item">
+              <div class="notification-user-avatar active">
+                <img src="/assets/img/User2Avatar.png" />
+              </div>
+              <div class="notifications-content-component">
+                <p class="notification-message">
+                  <strong class="user-name">Mark Jacobs</strong>has applied for
+                  leave and is currently awaiting approval.
+                </p>
+
+                <label class="notification-time">Today at 09:42 AM</label>
+              </div>
+            </li>
+            <li class="notifications-list-item">
+              <div class="notification-user-avatar active">
+                <img src="/assets/img/User3Avatar.png" />
+              </div>
+              <div class="notifications-content-component">
+                <p class="notification-message">
+                  <strong class="user-name">Mark Jacobs</strong>has applied for
+                  leave and is currently awaiting approval.
+                </p>
+
+                <label class="notification-time">Today at 09:42 AM</label>
+              </div>
+            </li>
+            <li class="notifications-list-item">
+              <div class="notification-user-avatar active">
+                <img src="/assets/img/User1Avatar.svg" />
+              </div>
+              <div class="notifications-content-component">
+                <p class="notification-message">
+                  <strong class="user-name">Mark Jacobs</strong>has applied for
+                  leave and is currently awaiting approval.
+                </p>
+
+                <label class="notification-time">Today at 09:42 AM</label>
+              </div>
+            </li>
+            <li class="notifications-list-item">
+              <div class="notification-user-avatar">
+                <img src="/assets/img/User2Avatar.png" />
+              </div>
+              <div class="notifications-content-component">
+                <p class="notification-message">
+                  <strong class="user-name">Mark Jacobs</strong>has applied for
+                  leave and is currently awaiting approval.
+                </p>
+
+                <label class="notification-time">Today at 09:42 AM</label>
+              </div>
+            </li>
+            <li class="notifications-list-item">
+              <div class="notification-user-avatar">
+                <img src="/assets/img/User3Avatar.png" />
+              </div>
+              <div class="notifications-content-component">
+                <p class="notification-message">
+                  <strong class="user-name">Mark Jacobs</strong>has applied for
+                  leave and is currently awaiting approval.
+                </p>
+
+                <label class="notification-time">Today at 09:42 AM</label>
+              </div>
+            </li>
+            <li class="notifications-list-item">
+              <div class="notification-user-avatar">
+                <img src="/assets/img/User1Avatar.svg" />
+              </div>
+              <div class="notifications-content-component">
+                <p class="notification-message">
+                  <strong class="user-name">Mark Jacobs</strong>has applied for
+                  leave and is currently awaiting approval.
+                </p>
+
+                <label class="notification-time">Today at 09:42 AM</label>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          id="leaveDetailsComponent"
+          style="display: none"
+          class="leave-deatils-component"
+        >
+          <div class="leave-details-header">
+            <h2>Leave Details</h2>
+            <img id="leaveDetailCloseIcon" src="/assets/img/CloseIcon.png" />
+          </div>
+          <div class="user-details-card">
+            <div class="user-details-component">
+              <img src="/assets/img/User3Avatar.png" />
+              <div class="user-info-component">
+                <div class="user-info-row">
+                  <label class="info-key">NAME</label>
+                  <label class="info-value" id="userName"
+                    >Nur Fariha binti Maslan</label
+                  >
+                </div>
+                <div class="user-info-row">
+                  <label class="info-key">LEAVE TYPE</label>
+                  <label class="info-value" id="leaveType"
+                    >Hospital Leave</label
+                  >
+                </div>
+                <div class="user-info-row">
+                  <label class="info-key">START DATE</label>
+                  <label class="info-value" id="startDate"
+                    >21 Apr, 2023 09:00 AM</label
+                  >
+                </div>
+                <div class="user-info-row">
+                  <label class="info-key">END DATE</label>
+                  <label class="info-value" id="endDate"
+                    >24 Apr, 2023 18:00 PM</label
+                  >
+                </div>
+                <div class="user-info-row">
+                  <label class="info-key">ATTACHMENT</label>
+                  <label class="info-value attachment-value" id="attechment">
+                    <img src="/assets/img/AttachmentIcon.svg" />
+                    Medical Certificate
+                  </label>
+                </div>
+                <div class="user-info-row">
+                  <label class="info-key">REASON</label>
+                  <label class="info-value" id="reason">Out of sorts</label>
+                </div>
+              </div>
+            </div>
+            <div class="leave-days-info-component">
+              <p class="leave-start-end-date">03 March 2023 - 06 march 2023</p>
+              <div class="leave-hours-and-table-controller-row">
+                <p class="total-hours-text">TOTAL HOURS: 16</p>
+                <span
+                  class="table-visibility-controller"
+                  id="toggleTableButton"
+                >
+                  <label id="toggleTableLabel" class="toggle-table-label"
+                    >Expand</label
+                  >
+                  <img src="/assets/img/DownIcon.svg" />
+                </span>
+              </div>
+            </div>
+            <div class="leave-days-table-component">
+              <table class="leave-days-table">
+                <thead>
+                  <tr class="table-head">
+                    <td class="first-col">
+                      <label>Start Date</label>
+                      <img src="/assets/img/SortIcon.svg" />
+                    </td>
+                    <td>
+                      <label>DAY(S)</label>
+                    </td>
+                    <td class="last-col">
+                      <label>HOURS</label>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-body-row">
+                    <td>
+                      <label>21 Apr 2023</label>
+                    </td>
+                    <td>
+                      <label>Friday</label>
+                    </td>
+                    <td>
+                      <label>8</label>
+                    </td>
+                  </tr>
+                  <tr class="table-off-days-body-row">
+                    <td>
+                      <label>21 Apr 2023</label>
+                    </td>
+                    <td>
+                      <label>Friday</label>
+                    </td>
+                    <td>
+                      <label>8</label>
+                    </td>
+                  </tr>
+                  <tr class="table-off-days-body-row">
+                    <td>
+                      <label>21 Apr 2023</label>
+                    </td>
+                    <td>
+                      <label>Friday</label>
+                    </td>
+                    <td>
+                      <label>8</label>
+                    </td>
+                  </tr>
+                  <tr class="table-body-row">
+                    <td>
+                      <label>21 Apr 2023</label>
+                    </td>
+                    <td>
+                      <label>Friday</label>
+                    </td>
+                    <td>
+                      <label>8</label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="approval-level-header">
+            <h2>Approval Level</h2>
+          </div>
+          <div class="approval-level-card">
+            <div class="approval-level-1-row">
+              <span class="approval-indicator approval-pending"></span>
+              <img src="/assets/img/User1Avatar.svg" class="approver-avatar" />
+              <div class="approver-info-component">
+                <div class="approver-info-row">
+                  <label class="approver-info-key">NAME</label>
+                  <label class="approver-info-value">Simon Minter</label>
+                </div>
+                <div class="approver-info-row">
+                  <label class="approver-info-key">DESIGNATION</label>
+                  <label class="approver-info-value">Human Resources</label>
+                </div>
+                <div class="approver-info-row">
+                  <label class="approver-info-key">STATUS</label>
+                  <label class="approver-info-value pending">
+                    Pending Approvel
+                  </label>
+                </div>
+              </div>
+              <span class="timeline-connect-line"></span>
+            </div>
+            <div class="approval-level-2-row">
+              <span class="approval-indicator approval-pending"></span>
+              <img src="/assets/img/User2Avatar.png" class="approver-avatar" />
+              <div class="approver-info-component">
+                <div class="approver-info-row">
+                  <label class="approver-info-key">NAME</label>
+                  <label class="approver-info-value">Simon Minter</label>
+                </div>
+                <div class="approver-info-row">
+                  <label class="approver-info-key">DESIGNATION</label>
+                  <label class="approver-info-value">Human Resources</label>
+                </div>
+                <div class="approver-info-row">
+                  <label class="approver-info-key">STATUS</label>
+                  <label class="approver-info-value pending">
+                    Pending Approvel
+                  </label>
+                </div>
+              </div>
+              <span class="timeline-connect-line"></span>
+            </div>
+            <div class="approval-level-3-row">
+              <span class="approval-indicator approval-approved"></span>
+              <img src="/assets/img/User3Avatar.png" class="approver-avatar" />
+              <div class="approver-info-component">
+                <div class="approver-info-row">
+                  <label class="approver-info-key">NAME</label>
+                  <label class="approver-info-value">Simon Minter</label>
+                </div>
+                <div class="approver-info-row">
+                  <label class="approver-info-key">DESIGNATION</label>
+                  <label class="approver-info-value">Human Resources</label>
+                </div>
+                <div class="approver-info-row">
+                  <label class="approver-info-key">STATUS</label>
+                  <label class="approver-info-value">
+                    03 Mar 2023, 17:30 AM
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="approval-level-header">
+            <h2>Comments</h2>
+          </div>
+          <div class="comments-box-card">
+            <textarea rows="5" class="comments-box"></textarea>
+          </div>
+          <div class="leave-request-actions-row">
+            <botton class="action-button reject" id="rejectLeaveRequest"
+              >REJECT</botton
+            >
+            <botton class="action-button approve" id="approveLeaveRequest"
+              >APPROVE</botton
+            >
+          </div>
+        </div>
+      </main>
+    </div>
+    <div
+      id="approveToastNotification"
+      style="display: none"
+      class="approve-toast-notification"
+    >
+      <div class="notification-header">
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="toast-title">
+          <p>Notification</p>
+          <span id="closeNotification" class="close-notification-span">
+            <label>Just Now</label>
+            <img id="closeNotification" src="/assets/img/CloseIcon.png" />
+          </span>
+        </div>
+      </div>
+      <div class="notification-body">
+        <p class="notification-message" id="notificationMessage"></p>
+      </div>
+    </div>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>
